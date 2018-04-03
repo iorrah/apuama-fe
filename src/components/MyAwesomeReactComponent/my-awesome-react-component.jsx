@@ -8,57 +8,56 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    paddingTop: 75,
   },
   gridList: {
-    height: 680,
+    height: 667,
     overflowY: 'auto',
-    width: 500,
+    width: 375,
   },
 };
 
 const tilesData = [
   {
-    img: 'https://placeholdit.co//i/250x250?bg=111111',
-    title: 'Breakfast',
-    author: 'jill111',
+    img: 'Avenida Paulista.jpg',
+    title: 'Avenida Paulista',
     featured: true,
   },
   {
-    img: 'https://placeholdit.co//i/250x250?bg=111111',
-    title: 'Tasty burger',
-    author: 'pashminu',
+    img: 'Beco do Batman.jpg',
+    title: 'Beco do Batman',
   },
   {
-    img: 'https://placeholdit.co//i/250x250?bg=111111',
-    title: 'Camera',
-    author: 'Danson67',
+    img: 'Catedral Sao Paulo.jpg',
+    title: 'Catedral São Paulo',
   },
   {
-    img: 'https://placeholdit.co//i/250x250?bg=111111',
-    title: 'Morning',
-    author: 'fancycrave1',
+    img: 'Edificio Italia.jpg',
+    title: 'Edifício Itália',
     featured: true,
   },
   {
-    img: 'https://placeholdit.co//i/250x250?bg=111111',
-    title: 'Hats',
-    author: 'Hans',
+    img: 'Favela Paraisopolis.jpg',
+    title: 'Favela Paraisópolis',
   },
   {
-    img: 'https://placeholdit.co//i/250x250?bg=111111',
-    title: 'Honey',
-    author: 'fancycravel',
+    img: 'Monumento as Bandeiras.jpeg',
+    title: 'Monumento aos Bandeiras',
   },
   {
-    img: 'https://placeholdit.co//i/250x250?bg=111111',
-    title: 'Vegetables',
-    author: 'jill111',
+    img: 'Museu de Arte de Sao Paulo - MASP.jpg',
+    title: 'Museu de Arte de São Paulo - MASP',
   },
   {
-    img: 'https://placeholdit.co//i/250x250?bg=111111',
-    title: 'Water plant',
-    author: 'BkrmadtyaKarki',
+    img: 'Parque Villa-Lobos.jpg',
+    title: 'Parque Villa-Lobos',
+  },
+  {
+    img: 'Patio do Colegio.jpg',
+    title: 'Pátio do Colégio',
+  },
+  {
+    img: 'Pinacoteca do Estado de Sao Paulo.jpg',
+    title: 'Pinacoteca do Estado de São Paulo',
   },
 ];
 
@@ -81,7 +80,7 @@ const GridListExampleComplex = () => (
           cols={tile.featured ? 2 : 1}
           rows={tile.featured ? 2 : 1}
         >
-          <img src={tile.img} alt="" />
+          <img src={`images/${tile.img}`} alt="" />
         </GridTile>
       ))}
     </GridList>
