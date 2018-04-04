@@ -5,8 +5,8 @@ const api = {
 
 if (process.env.NODE_ENV === 'development') {
   api.host = 'http://localhost:3000';
-} else if (process.env.NODE_ENV === 'production') {
-  api.host = 'http://iorrah.com/apuma-be';
+} else {
+  api.host = 'http://138.68.73.74';
 }
 
 api.url = `${api.host}${api.path}`;
