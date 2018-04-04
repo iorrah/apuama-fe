@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MyAwesomeReactComponent from './components/MyAwesomeReactComponent';
+import Gallery from './components/Gallery';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <MuiThemeProvider>
-          <MyAwesomeReactComponent />
+          <Gallery />
         </MuiThemeProvider>
       </div>
     );
