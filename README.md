@@ -1,4 +1,6 @@
-Apuama Frontend
+# Apuama Frontend
+
+[![Build Status](https://travis-ci.com/iorrah/apuama-fe.svg?branch=master)](https://travis-ci.com/iorrah/apuama-fe)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
