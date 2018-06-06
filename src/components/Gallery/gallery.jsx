@@ -15,12 +15,21 @@ const styles = {
     height: 667,
     overflowY: 'auto',
     width: 375,
+    padding: '20px 0 0',
+  },
+};
+
+const axiosParams = {
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Accept': 'application/json',
   },
 };
 
 class GridListExampleComplex extends Component {
   constructor() {
     super();
+    this.handleTileClick = this.handleTileClick.bind(this);
 
     this.state = {
       isLoading: true,
@@ -45,6 +54,28 @@ class GridListExampleComplex extends Component {
       });
   }
 
+  handleTileClick(tileId) {
+    this.setState({ isLoading: true });
+
+    axios.put(`${api.url}/${tileId}/like`, axiosParams)
+      .then((response) => {
+        if (response.data) {
+          this.setState({ 
+            isLoading: false,
+            gallery: response.data,
+          });
+        } else {
+          throw new Error('No data has been provided');
+        }
+      })
+      .catch((error) => {
+        this.setState({ 
+          isLoading: false,
+          error: error.message,
+        });
+      });
+  }
+
   render() {
     const { isLoading, gallery, error } = this.state;
 
@@ -62,11 +93,13 @@ class GridListExampleComplex extends Component {
               padding={1}
               style={styles.gridList}
             >
-              {gallery.map((tile) => (
+              {gallery && gallery.map((tile) => (
                 <GridTile
                   key={tile.img}
                   title={tile.title}
-                  actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+                  actionIcon={<IconButton onClick={(event) => this.handleTileClick(tile.id)}>
+                    <StarBorder color={tile.liked ? 'yellow' : 'white'} />
+                  </IconButton>}
                   actionPosition="left"
                   titlePosition="top"
                   titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
